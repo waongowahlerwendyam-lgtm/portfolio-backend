@@ -1,12 +1,14 @@
-FROM openjdk:21.0.10
-
+# Étape 1 : Construction avec Maven
+FROM maven:3.9.6-eclipse-temurin-21 AS build
 WORKDIR /app
+COPY pom.xml .
+RUN mvn dependency:go-offline
+COPY src ./src
+RUN mvn clean package -DskipTests
 
-# Copier le fichier JAR généré par Maven
-COPY target/*.jar app.jar
-
-# Exposer le port 8080 (ou celui que vous utilisez)
+# Étape 2 : Exécution
+FROM eclipse-temurin:21-jdk-alpine
+WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
-
-# Lancer l'application
 ENTRYPOINT ["java", "-jar", "app.jar"]
