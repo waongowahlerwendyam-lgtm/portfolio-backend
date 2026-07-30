@@ -1,11 +1,12 @@
-FROM maven:3.9.9-eclipse-temurin-21 AS build
-WORKDIR /app
-COPY . .
-RUN mvn clean package -DskipTests
-
 FROM openjdk:21-jdk-slim
-WORKDIR /app
-COPY --from=build /app/target/portfolio-backend-0.0.1-SNAPSHOT.jar app.jar
-EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
 
+WORKDIR /app
+
+# Copier le fichier JAR généré par Maven
+COPY target/*.jar app.jar
+
+# Exposer le port 8080 (ou celui que vous utilisez)
+EXPOSE 8080
+
+# Lancer l'application
+ENTRYPOINT ["java", "-jar", "app.jar"]
