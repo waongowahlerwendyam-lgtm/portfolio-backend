@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor
-@CrossOrigin(origins = {"http://localhost:4200", "https://portfolio-wahler.vercel.app"}) // <-- CORRIGÉ ICI
+@CrossOrigin(origins = "http://localhost:4200")
 public class ContactController {
 
     private final EmailService emailService;
