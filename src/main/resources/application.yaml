@@ -3,10 +3,10 @@ server:
 
 spring:
   mail:
-    host:  smtp-relay.brevo.com
+    host: smtp.gmail.com
     port: 587
-    username: b3f0ed001@smtp-brevo.com
-    password: ${SMTP_PASSWORD}
+    username: waongowahlerwendyam@gmail.com
+    password: ${GMAIL_APP_PASSWORD}
     properties:
       mail:
         smtp:
