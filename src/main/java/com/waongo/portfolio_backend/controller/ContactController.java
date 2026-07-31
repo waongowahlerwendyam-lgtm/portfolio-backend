@@ -1,7 +1,7 @@
 package com.waongo.portfolio_backend.controller;
 
 import com.waongo.portfolio_backend.dto.ContactRequest;
-import com.waongo.portfolio_backend.service.EmailService;
+import com.waongo.portfolio_backend.service.BrevoEmailService;  // ← CHANGEMENT
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = {"http://localhost:4200", "https://portfolio-wahler.vercel.app"})
 public class ContactController {
 
-    private final EmailService emailService;
+    private final BrevoEmailService emailService;  // ← CHANGEMENT
 
     @PostMapping("/contact")
     public ResponseEntity<String> recevoirMessage(@Valid @RequestBody ContactRequest request) {

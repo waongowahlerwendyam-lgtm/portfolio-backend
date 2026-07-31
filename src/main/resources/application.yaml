@@ -14,3 +14,6 @@ spring:
           starttls:
             enable: true
             required: true
+brevo:
+  api:
+    key: ${BREVO_API_KEY}
