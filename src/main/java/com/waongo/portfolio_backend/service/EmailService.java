@@ -25,7 +25,7 @@ public class EmailService {
             // 3. Configurer les headers
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);
-            headers.set("api-key", apiKey);
+            headers.set("api-key", "xkeysib-2c461fc638e0d26d52917e3303a63734844ceb42ffe");
 
             // 4. Construire le corps de la requête
             Map<String, Object> requestBody = new HashMap<>();
