@@ -17,7 +17,7 @@ public class EmailService {
         message.setTo("waongowahlerwendyam@gmail.com");
         message.setSubject("Nouveau message de " + request.getNom());
         message.setText("De : " + request.getEmail() + "\n\n" + request.getMessage());
-        message.setFrom("waongowahlerwendyam@gmail.com");
+        message.setFrom("noreply@brevo.com");
 
         mailSender.send(message);
     }
