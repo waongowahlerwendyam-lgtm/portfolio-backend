@@ -1,7 +1,6 @@
 package com.waongo.portfolio_backend.service;
 
 import com.waongo.portfolio_backend.dto.ContactRequest;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.http.*;
@@ -10,9 +9,6 @@ import java.util.*;
 
 @Service
 public class EmailService {
-
-    @Value("${brevo.api.key}")
-    private String apiKey;
 
     public void envoyerEmailContact(ContactRequest request) {
         try {
@@ -25,7 +21,7 @@ public class EmailService {
             // 3. Configurer les headers
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);
-            headers.set("api-key", "xkeysib-2c461fc638e0d26d52917e3303a63734844ceb42ffe");
+            headers.set("api-key", "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");
 
             // 4. Construire le corps de la requête
             Map<String, Object> requestBody = new HashMap<>();
