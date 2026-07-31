@@ -1,7 +1,6 @@
 package com.waongo.portfolio_backend.controller;
 
 import com.waongo.portfolio_backend.dto.ContactRequest;
-import com.waongo.portfolio_backend.service.BrevoEmailService;  // ← CHANGEMENT
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
