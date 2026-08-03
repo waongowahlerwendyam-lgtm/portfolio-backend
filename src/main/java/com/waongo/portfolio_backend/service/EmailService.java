@@ -27,7 +27,7 @@ public class EmailService {
             Map<String, Object> requestBody = new HashMap<>();
 
             Map<String, String> sender = new HashMap<>();
-            sender.put("email", "noreply@brevo.com");
+            sender.put("email", "waongowahlerwendyam@gmail.com");
             sender.put("name", "Mon Portfolio");
             requestBody.put("sender", sender);
 
